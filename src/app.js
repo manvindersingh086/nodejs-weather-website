@@ -4,6 +4,7 @@ const path = require('path')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+const port = process.env.PORT || 3000
 //Path configurations
 const publicDirectoryPath = path.join(__dirname,'../public')
 app.set('views', path.join(__dirname, '../templates/views'))
@@ -89,6 +90,6 @@ app.get('*',(req,resp)=> {
         errorMsg:'Page not found'
     })
 })
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on 3000.')
 })
